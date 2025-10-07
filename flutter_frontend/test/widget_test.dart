@@ -3,16 +3,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_frontend/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
+  testWidgets('Renders Healthcare home screen and dashboard content', (WidgetTester tester) async {
+    // Build app
     await tester.pumpWidget(const MyApp());
+    // Let any initial frames settle
+    await tester.pump();
 
-    expect(find.text('flutter_frontend App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-  });
-
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-
-    expect(find.text('flutter_frontend'), findsOneWidget);
+    // Verify AppBar title and initial tab content render
+    expect(find.text('Healthcare'), findsOneWidget);
+    expect(find.text('Dashboard'), findsWidgets); // headline plus potential other occurrences
+    // Basic scaffold present
+    expect(find.byType(Scaffold), findsOneWidget);
   });
 }
