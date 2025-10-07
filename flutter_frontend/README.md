@@ -12,6 +12,9 @@ A minimalist Flutter application following the "Ocean Professional" theme. It in
 3. Dependencies are declared in `pubspec.yaml`. Run:
    - `flutter pub get`
 
+Android build note:
+- The Android build pins NDK version 27.0.12077973 in `android/app/build.gradle.kts` to satisfy `sqflite_android`. If you encounter an NDK mismatch error, ensure this NDK is installed or adjust local SDK settings accordingly.
+
 ## Theme and design guidelines
 
 - Theme: Ocean Professional
