@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Frontend</title>
+    <meta name="description" content="Healthcare Management System - Flutter Web" />
+    <!-- No blocking scripts; defer flutter loader -->
+    <script defer src="flutter.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <p>This app requires JavaScript to run.</p>
+    </noscript>
+    <script>
+      // Hint: we prefer HTML renderer when running locally (pass via CLI).
+      window.addEventListener('load', function () {
+        if ('serviceWorker' in navigator) {
+          // SW registration is optional in dev; safe to try.
+          navigator.serviceWorker.register('flutter_service_worker.js').catch(() => {});
+        }
+        // Bootstrap Flutter app
+        _flutter.loader
+          .loadEntrypoint({
+            // The CLI flag --web-renderer=html ensures HTML renderer usage.
+            // We keep defaults here so build system controls renderer.
+            serviceWorker: {
+              serviceWorkerVersion: null
+            }
+          })
+          .then(function (engineInitializer) {
+            return engineInitializer.initializeEngine();
+          })
+          .then(function (appRunner) {
+            return appRunner.runApp();
+          });
+      });
+    </script>
+  </body>
+</html>
