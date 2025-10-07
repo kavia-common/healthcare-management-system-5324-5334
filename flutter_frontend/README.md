@@ -1,27 +1,16 @@
-# Flutter Frontend (Healthcare)
+# flutter_frontend
 
-Responsive Flutter app for the Healthcare Management System.
+A new Flutter project.
 
-Quick start (Web preview with HTML renderer)
-- Clean and fetch packages:
-  - flutter clean
-  - flutter pub get
-- Run on Chrome with HTML renderer (recommended for CI/web preview):
-  - flutter run -d chrome --web-renderer html
+## Getting Started
 
-Environment configuration
-- The app uses flutter_dotenv to optionally load a .env file at startup.
-- If .env is missing or variables are not set, sensible defaults are used.
-- Default backend for web builds: http://localhost:3001
-- Mobile/desktop default: http://10.0.2.2:3001 (Android emulator loopback)
+This project is a starting point for a Flutter application.
 
-Optional .env example
-- Create flutter_frontend/.env:
-  BACKEND_BASE_URL=http://localhost:3001
+A few resources to get you started if this is your first Flutter project:
 
-Notes
-- runApp(MyApp()) is called exactly once in lib/main.dart after a quick, optional dotenv load to avoid blocking UI.
-- The UI is compatible with the HTML renderer and does not rely on CanvasKit-specific APIs.
-- We avoid unstable Flutter APIs; if you encounter analyzer issues, run `flutter clean` and re-fetch dependencies.
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-More developer tips are in tool/dev_notes.md.
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
